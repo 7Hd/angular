@@ -23,6 +23,38 @@ Angular is a development platform for building mobile and desktop web applicatio
 Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our
 guidelines for [contributing][contributing] and then check out one of our issues in the [hotlist: community-help](https://github.com/angular/angular/labels/hotlist%3A%20community-help).
 
+## Translate aio
+
+Sparse Checkout:
+
+```sh
+mkdir <repo>
+cd <repo>
+git init
+git remote add -f origin <url>
+git config core.sparseCheckout true
+```
+
+Set `.git/info/sparse-checkout`:
+
+```
+/aio/*
+/.clang-format
+/.editorconfig
+/.gitattributes
+/.gitignore
+/README.md
+```
+
+Checkout:
+
+```sh
+git pull origin master
+
+# when change sparse-checkou setting
+git reset --hard
+```
+
 [browserstack]: https://www.browserstack.com/
 [contributing]: http://github.com/angular/angular/blob/master/CONTRIBUTING.md
 [quickstart]: https://angular.io/docs/ts/latest/quickstart.html
